@@ -1,5 +1,11 @@
 #pragma once
 
+/**
+* IMPORTANT!
+*	This whole event system was stolen from cherno for learning purposes only! 
+*	I too dumb to understand it
+*/
+
 #include <functional>
 
 enum class EventType
