@@ -12,7 +12,7 @@ class Input
 public:
 
 	static bool IsKeyPressed(const KeyCode keycode);
-	static bool IsMouseKeyReleased(const MouseCode mousecode);
+	static bool IsMouseKeyPressed(const MouseCode mousecode);
 
 	static glm::vec2 GetMousePos();
 

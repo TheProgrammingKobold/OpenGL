@@ -23,9 +23,9 @@
 
 
 
-
 #include "Window.h"
 #include "Scene.h"
+#include "Input.h"
 
 class Renderer
 {
@@ -87,6 +87,6 @@ private:
 	// Other variables
 	float m_FOV = 80.0f;
 	int m_count = 0;
-
+	bool m_Vsync = true;
 };
 

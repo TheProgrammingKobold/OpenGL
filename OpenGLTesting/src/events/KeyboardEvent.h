@@ -31,7 +31,10 @@ public:
 
 	bool IsRepeat() const { return m_IsRepeat; }
 
-	EVENT_CLASS_TYPE(KeyPressed)
+	//EVENT_CLASS_TYPE(KeyPressed)
+
+	static EventType GetStaticType() { return EventType::KeyPressed; }
+	virtual EventType GetEventType() const override { return GetStaticType(); }
 
 private:
 

@@ -8,6 +8,8 @@
 
 #include <functional>
 
+#define BIT(x) (1 << x)
+
 enum class EventType
 {
 	None = 0,
@@ -19,11 +21,11 @@ enum class EventType
 enum EventCategory
 {
 	None = 0,
-	EventCategoryApplication,
-	EventCategoryInput,
-	EventCategoryKeyboard,
-	EventCategoryMouse,
-	EventCategoryMouseButton
+	EventCategoryApplication = BIT(0),
+	EventCategoryInput = BIT(1),
+	EventCategoryKeyboard = BIT(2),
+	EventCategoryMouse = BIT(3),
+	EventCategoryMouseButton = BIT(4)
 };
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::type; }\

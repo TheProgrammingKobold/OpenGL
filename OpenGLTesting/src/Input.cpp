@@ -7,7 +7,7 @@ bool Input::IsKeyPressed(const KeyCode keycode)
     return glfwGetKey(m_Window, static_cast<int32_t>(keycode)) == GLFW_PRESS;
 }
 
-bool Input::IsMouseKeyReleased(const MouseCode mousecode)
+bool Input::IsMouseKeyPressed(const MouseCode mousecode)
 {
     return glfwGetKey(m_Window, static_cast<int32_t>(mousecode)) == GLFW_PRESS;
 }

@@ -48,6 +48,8 @@ int Renderer::init()
 	m_startTime = glfwGetTime();
 	m_endTime = glfwGetTime();
 
+	glfwSwapInterval(m_Vsync);
+
 	return 0;
 }
 
