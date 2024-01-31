@@ -32,8 +32,6 @@ bool Window::shouldClose(Window& window)
 
 int Window::init()
 {
-	KeyPressedEvent key(Key::W, 0);
-	m_data.EventCallback(key);
 
 	// Creates the window object
 	m_window = glfwCreateWindow(m_width, m_height, m_windowName, NULL, NULL);
@@ -83,18 +81,18 @@ int Window::init()
 				case GLFW_RELEASE:
 				{
 					KeyReleasedEvent event(key);
-					//data.EventCallback(event);
+					data.EventCallback(event);
 					break;
 				}
 				case GLFW_REPEAT:
 				{
 					KeyPressedEvent event(key, true);
-					//data.EventCallback(event);
+					data.EventCallback(event);
 					break;
 				}
 				}
 			}
-			catch (const std::exception& e)
+			catch (const std::bad_function_call& e)
 			{
 				std::cerr << e.what() << '\n';
 			}

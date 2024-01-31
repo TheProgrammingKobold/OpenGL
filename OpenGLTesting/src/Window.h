@@ -49,7 +49,7 @@ private:
 
 	struct WindowData
 	{
-		std::function<void(KeyPressedEvent&)> EventCallback;
+		std::function<void(Event&)> EventCallback = [](Event&) { EventDispatcher event(Event); };
 	};
 
 	WindowData m_data;
