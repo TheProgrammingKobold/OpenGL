@@ -34,11 +34,11 @@ public:
 	inline const int getWidth() const { return m_width; }
 	inline const int getHeight() const { return m_height; }
 
+	inline const void setEventCallbackFn(const std::function<void(Event&)>& callback) { m_data.EventCallback = callback; }
+
 private:
 
-	using EventCallbackFn = std::function<void(Event)>;
-
-	//void setEventCallback(EventCallbackFn callback) { m_data.EventCallback = callback; }
+	//using EventCallbackFn = std::function<void(Event)>;
 
 	// pointer to window
 	GLFWwindow* m_window = nullptr;
@@ -49,7 +49,7 @@ private:
 
 	struct WindowData
 	{
-		std::function<void(Event&)> EventCallback = [](Event&) { EventDispatcher event(Event); };
+		std::function<void(Event&)> EventCallback;
 	};
 
 	WindowData m_data;

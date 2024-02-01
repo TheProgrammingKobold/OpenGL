@@ -72,29 +72,29 @@ int Window::init()
 			{
 				switch (action)
 				{
-				case GLFW_PRESS:
-				{
-					KeyPressedEvent event(key, 0);
-					data.EventCallback(event);
-					break;
-				}
-				case GLFW_RELEASE:
-				{
-					KeyReleasedEvent event(key);
-					data.EventCallback(event);
-					break;
-				}
-				case GLFW_REPEAT:
-				{
-					KeyPressedEvent event(key, true);
-					data.EventCallback(event);
-					break;
-				}
+					case GLFW_PRESS:
+					{
+						KeyPressedEvent event(key, 0);
+						data.EventCallback(event);
+						break;
+					}
+					case GLFW_RELEASE:
+					{
+						KeyReleasedEvent event(key);
+						data.EventCallback(event);
+						break;
+					}
+					case GLFW_REPEAT:
+					{
+						KeyPressedEvent event(key, true);
+						data.EventCallback(event);
+						break;
+					}
 				}
 			}
 			catch (const std::bad_function_call& e)
 			{
-				std::cerr << e.what() << '\n';
+				std::cerr << "[Window][SetKeyCallback]: " << e.what() << '\n';
 			}
 
 		});

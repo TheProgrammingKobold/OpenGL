@@ -49,8 +49,6 @@
 const uint32_t SCR_WIDTH = 1920;
 const uint32_t SCR_HEIGHT = 1080;
 
-#define MAX_FRAMES (1/144)
-
 // Each vertex contains position, normals, color, texCoords
 Vertex vertices[] =
 {

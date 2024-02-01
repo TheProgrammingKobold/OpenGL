@@ -14,7 +14,7 @@ void setConsoleTitle(std::wstring input)
 
 #endif // _WIN32
 
-// Definig the static variable for Renderer
+// Defining the static variable for Renderer
 Renderer Renderer::m_instance;
 
 
