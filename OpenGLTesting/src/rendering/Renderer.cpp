@@ -14,7 +14,7 @@ void setConsoleTitle(std::wstring input)
 
 #endif // _WIN32
 
-// Definig the static variable for Renderer
+// Defining the static variable for Renderer
 Renderer Renderer::m_instance;
 
 
@@ -47,6 +47,8 @@ int Renderer::init()
 	// For frame limiting
 	m_startTime = glfwGetTime();
 	m_endTime = glfwGetTime();
+
+	glfwSwapInterval(m_Vsync);
 
 	return 0;
 }

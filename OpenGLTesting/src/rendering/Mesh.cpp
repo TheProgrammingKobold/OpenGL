@@ -33,5 +33,5 @@ void Mesh::Draw(Shader& shader, Camera& camera)
 	camera.matrix(shader, "camMatrix");
 
 	// Draw call
-	glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, (GLsizei)m_indices.size(), GL_UNSIGNED_INT, 0);
 }

@@ -3,6 +3,12 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <functional>
+
+#include "events/Events.h"
+#include "events/KeyboardEvent.h"
+#include "events/MouseEvent.h"
+
 #include "Logging.h"
 
 class Window
@@ -28,7 +34,11 @@ public:
 	inline const int getWidth() const { return m_width; }
 	inline const int getHeight() const { return m_height; }
 
+	inline const void setEventCallbackFn(const std::function<void(Event&)>& callback) { m_data.EventCallback = callback; }
+
 private:
+
+	//using EventCallbackFn = std::function<void(Event)>;
 
 	// pointer to window
 	GLFWwindow* m_window = nullptr;
@@ -36,5 +46,13 @@ private:
 	int m_width = 800;
 	int m_height = 600;
 	const char* m_windowName = nullptr;
+
+	struct WindowData
+	{
+		std::function<void(Event&)> EventCallback;
+	};
+
+	WindowData m_data;
+
 };
 

@@ -49,8 +49,6 @@
 const uint32_t SCR_WIDTH = 1920;
 const uint32_t SCR_HEIGHT = 1080;
 
-#define MAX_FRAMES (1/144)
-
 // Each vertex contains position, normals, color, texCoords
 Vertex vertices[] =
 {
@@ -243,18 +241,18 @@ int main()
 
 	while (!Window::shouldClose(window))
 	{
-
-		if (glfwGetKey(window.getWindow(), GLFW_KEY_M) == GLFW_PRESS)
+#if 0
+		if (Input::IsKeyPressed(Key::M))
 		{
 			Renderer::get().setScene(&grassScene);
 			Renderer::get().setCamera(&camera2);
 		}
-		if (glfwGetKey(window.getWindow(), GLFW_KEY_N) == GLFW_PRESS)
+		if (Input::IsKeyPressed(Key::N))
 		{
 			Renderer::get().setScene(&defaultScene);
 			Renderer::get().setCamera(&camera);
 		}
-	
+#endif
 		Renderer::get().renderLoop();
 
 	}
